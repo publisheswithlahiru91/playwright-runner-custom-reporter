@@ -10,13 +10,13 @@
     "tdd",
     "e2e"
   ],
-  "homepage": "https://github.com/LahiruMadhawaWork/playwright-runner-custom-reporter#readme",
+  "homepage": "https://github.com/LahiruMadhawa2020/playwright-runner-lm-reporter#readme",
   "bugs": {
-    "url": "https://github.com/LahiruMadhawaWork/playwright-runner-custom-reporter/issues"
+    "url": "https://github.com/LahiruMadhawa2020/playwright-runner-lm-reporter/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LahiruMadhawaWork/playwright-runner-custom-reporter.git"
+    "url": "git+https://github.com/LahiruMadhawa2020/playwright-runner-lm-reporter.git"
   },
   "license": "MIT",
   "author": "Lahiru Madhawa",
