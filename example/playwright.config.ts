@@ -1,0 +1,34 @@
+import { defineConfig } from '@playwright/test';
+
+const isListMode = process.argv.includes('--list');
+
+export default defineConfig({
+  testDir: './tests',
+  fullyParallel: true,
+  retries: 0,
+  reporter: isListMode
+    ? [['list']]
+    : [
+        ['list'],
+        // Simple report: compact dashboard table with expandable rows
+        // ['playwright-runner-lm-reporter', { outputDir: 'playwright-lm-report-simple' }],
+        // Advanced report: Playwright-style drill-down, nested steps, trace open/download
+        [
+          'playwright-runner-lm-reporter/advanced',
+          {
+            outputDir: 'playwright-lm-report',
+            reportTitle: 'Example TDD-LM Advanced Report',
+            reportSubtitle: 'playwright-runner-lm-reporter advanced demo',
+            defaultEnvironment: 'local',
+            defaultAuthor: 'Example QA',
+            liveRefreshSeconds: 0,
+            theme: 'light',
+          },
+        ],
+      ],
+  use: {
+    trace: 'on',
+    screenshot: 'on',
+    video: 'on',
+  },
+});

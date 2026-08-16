@@ -1,0 +1,59 @@
+{
+  "name": "playwright-runner-lm-reporter",
+  "version": "1.0.0",
+  "description": "Real-time HTML Playwright reporter with steps, screenshots, videos, traces, and run history",
+  "keywords": [
+    "playwright",
+    "reporter",
+    "html-reporter",
+    "test-automation",
+    "tdd",
+    "e2e"
+  ],
+  "homepage": "https://github.com/LahiruMadhawaWork/playwright-runner-custom-reporter#readme",
+  "bugs": {
+    "url": "https://github.com/LahiruMadhawaWork/playwright-runner-custom-reporter/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LahiruMadhawaWork/playwright-runner-custom-reporter.git"
+  },
+  "license": "MIT",
+  "author": "Lahiru Madhawa",
+  "type": "commonjs",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./advanced": {
+      "types": "./dist/advanced.d.ts",
+      "default": "./dist/advanced.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
+    "prepublishOnly": "npm run clean && npm run build",
+    "example:install": "npm install && npm run build && cd example && npm install && npx playwright install chromium",
+    "example:test": "cd example && npx playwright test"
+  },
+  "peerDependencies": {
+    "@playwright/test": ">=1.30.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
