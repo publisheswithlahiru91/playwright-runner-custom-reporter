@@ -7,7 +7,7 @@
     "postinstall": "playwright install chromium"
   },
   "devDependencies": {
-    "@playwright/test": "^1.49.0",
+    "@playwright/test": "^1.62.1",
     "@types/node": "^22.10.0",
     "playwright-runner-lm-reporter": "file:.."
   }

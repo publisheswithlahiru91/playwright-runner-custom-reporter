@@ -42,14 +42,16 @@
     "build": "tsc -p tsconfig.json",
     "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
     "prepublishOnly": "npm run clean && npm run build",
-    "example:install": "npm install && npm run build && cd example && npm install && npx playwright install chromium",
-    "example:test": "cd example && npx playwright test"
+    "example:advanced:install": "npm install && npm run build && cd advanced-report-example && npm install && npx playwright install chromium",
+    "example:advanced:test": "cd advanced-report-example && npx playwright test",
+    "example:simple:install": "npm install && npm run build && cd simple-report-example && npm install && npx playwright install chromium",
+    "example:simple:test": "cd simple-report-example && npx playwright test"
   },
   "peerDependencies": {
-    "@playwright/test": ">=1.30.0"
+    "@playwright/test": ">=1.49.0"
   },
   "devDependencies": {
-    "@playwright/test": "^1.49.0",
+    "@playwright/test": "^1.62.1",
     "@types/node": "^22.10.0",
     "typescript": "^5.7.0"
   },

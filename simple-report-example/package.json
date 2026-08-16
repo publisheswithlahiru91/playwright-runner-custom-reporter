@@ -1,0 +1,14 @@
+{
+  "name": "playwright-runner-lm-reporter-example",
+  "private": true,
+  "scripts": {
+    "test": "playwright test",
+    "test:list": "playwright test --list",
+    "postinstall": "playwright install chromium"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@types/node": "^22.10.0",
+    "playwright-runner-lm-reporter": "file:.."
+  }
+}

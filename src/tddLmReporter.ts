@@ -59,7 +59,7 @@ class TddLmReporter implements Reporter {
         this.options = {
             mode: options.mode ?? 'simple',
             outputDir: options.outputDir ?? 'playwright-lm-report',
-            reportTitle: options.reportTitle ?? 'TDD-LM Automation Report',
+            reportTitle: options.reportTitle ?? 'Simple Automation Report',
             reportSubtitle: options.reportSubtitle ?? 'Playwright Test Automation',
             environmentVariable: options.environmentVariable ?? 'TEST_ENV',
             defaultEnvironment: options.defaultEnvironment ?? 'DEV',
@@ -91,7 +91,7 @@ class TddLmReporter implements Reporter {
         const environment = this.getEnvironmentLabel();
         
         console.log('\n╔══════════════════════════════════════════════════════════════╗');
-        console.log('║     🎭 TDD-LM-Reporter — REAL-TIME REPORT                   ║');
+        console.log('║     🎭 Playwright LM Reporter — REAL-TIME REPORT              ║');
         console.log('╠══════════════════════════════════════════════════════════════╣');
         console.log(`║  📅 Started:     ${this.startTime.toLocaleString().padEnd(42)}║`);
         console.log(`║  📊 Total Tests: ${String(totalTests).padEnd(42)}║`);
@@ -428,7 +428,7 @@ class TddLmReporter implements Reporter {
         console.log(`║  📈 Pass Rate: ${(passRate + '%').padEnd(44)}║`);
         console.log('╚══════════════════════════════════════════════════════════════╝');
 
-        console.log('\n📊 Generating TDD-LM HTML Report...');
+        console.log('\n📊 Generating Playwright LM HTML Report...');
         await this.generateReport();
         console.log(`✅ Report generated: ${this.outputFile}`);
         if (this.lastRunManifest) {
@@ -633,7 +633,7 @@ class TddLmReporter implements Reporter {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>TDD-LM Report History</title>
+    <title>🎭 Report History</title>
     <style>
         body { font-family: 'Segoe UI', sans-serif; background: #f5f5f5; padding: 20px; }
         .header { background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 20px; text-align: center; margin-bottom: 20px; border-radius: 8px; }
@@ -647,7 +647,7 @@ class TddLmReporter implements Reporter {
     </style>
 </head>
 <body>
-    <div class="header"><h1>📊 TDD-LM Report History</h1><p>${this.escapeHtml(this.options.reportSubtitle)}</p></div>
+    <div class="header"><h1>📊 Report History</h1><p>${this.escapeHtml(this.options.reportSubtitle)}</p></div>
     <div class="report-list">
         ${files.map((f, i) => {
             const match = f.match(/report_(\d{4})(\d{2})(\d{2})_(\d{2})(\d{2})(\d{2})\.html/);
@@ -697,7 +697,7 @@ class TddLmReporter implements Reporter {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TDD-LM Automation Report</title>
+    <title>🎭 Simple Automation Report</title>
     <style>
         ${this.getStyles()}
     </style>
@@ -722,7 +722,7 @@ class TddLmReporter implements Reporter {
     </div>
 
     <footer class="report-footer">
-        <p>Built with ❤️ by <a href="https://github.com/LahiruMadhawaWork" target="_blank">Lahiru Madhawa</a> | <a href="https://github.com/LahiruMadhawaWork" target="_blank">IFS Technology</a></p>
+        <p>Built for the community by <a href="https://github.com/LahiruMadhawaWork" target="_blank">Lahiru Madhawa</a></p>
     </footer>
 
     <script>

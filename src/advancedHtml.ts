@@ -295,7 +295,7 @@ export function renderAdvancedHtml(context: ReportRenderContext): string {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     ${refreshMeta}
-    <title>${escapeHtml(context.options.reportTitle)}</title>
+    <title>🎭 ${escapeHtml(context.options.reportTitle)}</title>
     <style>${getAdvancedStyles()}</style>
 </head>
 <body>
@@ -402,7 +402,7 @@ export function renderAdvancedHtml(context: ReportRenderContext): string {
     ${detailTemplates}
 
     <footer class="report-footer">
-        <p>Advanced TDD-LM Report | Fully static HTML — no server required</p>
+        <p>Advanced Automation Report | Fully static HTML — no server required</p>
     </footer>
 
     <script>
@@ -427,6 +427,7 @@ function getAdvancedStyles(): string {
             color: white;
             padding: 34px 28px;
             box-shadow: var(--shadow);
+            text-align: center;
         }
         .hero-header h1 { margin: 0 0 8px; font-size: 32px; }
         .hero-header p { margin: 0; opacity: 0.92; font-size: 16px; }

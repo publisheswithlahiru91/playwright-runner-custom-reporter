@@ -11,14 +11,12 @@ export default defineConfig({
     : [
         ['list'],
         // Simple report: compact dashboard table with expandable rows
-        // ['playwright-runner-lm-reporter', { outputDir: 'playwright-lm-report-simple' }],
-        // Advanced report: Playwright-style drill-down, nested steps, trace open/download
         [
-          'playwright-runner-lm-reporter/advanced',
+          'playwright-runner-lm-reporter',
           {
             outputDir: 'playwright-lm-report',
-            reportTitle: 'Example TDD-LM Advanced Report',
-            reportSubtitle: 'playwright-runner-lm-reporter advanced demo',
+            reportTitle: 'Simple Automation Report',
+            reportSubtitle: 'playwright-runner-lm-reporter simple demo',
             defaultEnvironment: 'local',
             defaultAuthor: 'Example QA',
             liveRefreshSeconds: 0,

@@ -30,20 +30,20 @@ pipeline {
     post {
         always {
             // Stable paths for HTML Publisher and email — same every build
-            archiveArtifacts artifacts: 'example/playwright-lm-report/index.html', allowEmptyArchive: true
-            archiveArtifacts artifacts: 'example/playwright-lm-report/latest.html', allowEmptyArchive: true
-            archiveArtifacts artifacts: 'example/playwright-lm-report/email-summary.*', allowEmptyArchive: true
-            archiveArtifacts artifacts: 'example/playwright-lm-report/latest-run.json', allowEmptyArchive: true
-            archiveArtifacts artifacts: 'example/playwright-lm-report/report_*.html', allowEmptyArchive: true
-            archiveArtifacts artifacts: 'example/playwright-lm-report/screenshots/**', allowEmptyArchive: true
-            archiveArtifacts artifacts: 'example/playwright-lm-report/videos/**', allowEmptyArchive: true
-            archiveArtifacts artifacts: 'example/playwright-lm-report/traces/**', allowEmptyArchive: true
+            archiveArtifacts artifacts: 'playwright-lm-report/index.html', allowEmptyArchive: true
+            archiveArtifacts artifacts: 'playwright-lm-report/latest.html', allowEmptyArchive: true
+            archiveArtifacts artifacts: 'playwright-lm-report/email-summary.*', allowEmptyArchive: true
+            archiveArtifacts artifacts: 'playwright-lm-report/latest-run.json', allowEmptyArchive: true
+            archiveArtifacts artifacts: 'playwright-lm-report/report_*.html', allowEmptyArchive: true
+            archiveArtifacts artifacts: 'playwright-lm-report/screenshots/**', allowEmptyArchive: true
+            archiveArtifacts artifacts: 'playwright-lm-report/videos/**', allowEmptyArchive: true
+            archiveArtifacts artifacts: 'playwright-lm-report/traces/**', allowEmptyArchive: true
 
             publishHTML(target: [
                 allowMissing: true,
                 alwaysLinkToLastBuild: true,
                 keepAll: true,
-                reportDir: 'example/playwright-lm-report',
+                reportDir: 'playwright-lm-report',
                 reportFiles: 'index.html',
                 reportName: 'Playwright TDD-LM Report',
                 reportTitles: 'Latest Playwright Run',
@@ -53,10 +53,10 @@ pipeline {
         failure {
             emailext(
                 subject: '${DEFAULT_SUBJECT}',
-                body: '${FILE,path="example/playwright-lm-report/email-summary.txt"}',
+                body: '${FILE,path="playwright-lm-report/email-summary.txt"}',
                 mimeType: 'text/plain',
                 attachLog: true,
-                attachmentsPattern: 'example/playwright-lm-report/index.html,example/playwright-lm-report/email-summary.html',
+                attachmentsPattern: 'playwright-lm-report/index.html,playwright-lm-report/email-summary.html',
                 to: '$DEFAULT_RECIPIENTS',
             )
         }
@@ -64,9 +64,9 @@ pipeline {
         success {
             emailext(
                 subject: '${DEFAULT_SUBJECT}',
-                body: '${FILE,path="example/playwright-lm-report/email-summary.txt"}',
+                body: '${FILE,path="playwright-lm-report/email-summary.txt"}',
                 mimeType: 'text/plain',
-                attachmentsPattern: 'example/playwright-lm-report/index.html',
+                attachmentsPattern: 'playwright-lm-report/index.html',
                 to: '$DEFAULT_RECIPIENTS',
             )
         }

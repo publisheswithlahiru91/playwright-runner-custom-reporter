@@ -1,19 +1,46 @@
+# Dependencies
 node_modules/
+
+# Build output
 dist/
-example/node_modules/
-example/test-results/
-example/playwright-report/
-example/playwright-lm-report/
+
+# Advanced report example
+advanced-report-example/node_modules/
+advanced-report-example/test-results/
+advanced-report-example/playwright-report/
+advanced-report-example/playwright-lm-report/
+advanced-report-example/.analytics/
+
+# Simple report example
+simple-report-example/node_modules/
+simple-report-example/test-results/
+simple-report-example/playwright-report/
+simple-report-example/playwright-lm-report/
+simple-report-example/.analytics/
+
+# Analytics
 /.analytics/
+
+# Logs
 *.log
+
+# OS files
 .DS_Store
 Thumbs.db
+
+# Python
 .pytest_cache/
 **/.pytest_cache/
 __pycache__/
 **/__pycache__/
+*.pyc
+*.pyo
 
-example/.analytics/
-
+# IDE
 .vscode/
+.idea/
+*.swp
+*.swo
+
+# Dev notes
 prompt-setup.txt

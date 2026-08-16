@@ -242,7 +242,7 @@ Downstream jobs, Slack bots, or notification scripts can read the last run witho
 
 ### Example Jenkinsfile
 
-See [`example/Jenkinsfile`](example/Jenkinsfile) for a complete pipeline with install, test, HTML publish, artifact archive, and success/failure email.
+See [`advanced-report-example/Jenkinsfile`](advanced-report-example/Jenkinsfile) for a complete pipeline with install, test, HTML publish, artifact archive, and success/failure email.
 
 ## Static HTML — no server required
 
@@ -406,27 +406,44 @@ Add generated folders to `.gitignore`:
 /.analytics/
 ```
 
-## Example project
+## Example projects
+
+### Advanced report example
 
 ```bash
 npm install
 npm run build
-cd example
+cd advanced-report-example
 npm install
 npx playwright test
 ```
 
-Then open `example/playwright-lm-report/index.html`.
+Then open `advanced-report-example/playwright-lm-report/index.html`.
 
-For Jenkins, see `example/Jenkinsfile`.
+### Simple report example
+
+```bash
+npm install
+npm run build
+cd simple-report-example
+npm install
+npx playwright test
+```
+
+Then open `simple-report-example/playwright-lm-report/index.html`.
+
+For Jenkins, see `advanced-report-example/Jenkinsfile` or `simple-report-example/Jenkinsfile`.
 
 ## Development
 
 ```bash
 npm install
 npm run build
-npm run example:install
-npm run example:test
+npm run example:advanced:install
+npm run example:advanced:test
+# or
+npm run example:simple:install
+npm run example:simple:test
 ```
 
 ## Publish to npm
@@ -440,7 +457,7 @@ npm publish
 ## Requirements
 
 - Node.js 18+
-- `@playwright/test` >= 1.30.0 (peer dependency)
+- `@playwright/test` >= 1.49.0 (peer dependency)
 
 ## License
 
